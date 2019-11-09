@@ -17,7 +17,7 @@ function App() {
             <Link to="/offer">Offer</Link>
           </li>
           <li>
-            <Link to="/reqest">Rquest</Link>
+            <Link to="/request">Rquest</Link>
           </li>
         </ul>
       </nav>
