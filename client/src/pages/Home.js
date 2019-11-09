@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-function Home() {
+function Home(props) {
+  // console.log(props);
   return (
     <div>
       Home2
@@ -8,4 +10,18 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    authToken: state.authToken
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
