@@ -1,11 +1,36 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import { updateAuthToken } from "../actions/auth";
 
-function Home() {
+function Home(props) {
+  // console.log(props);
   return (
     <div>
+      <button
+        onClick={() => {
+          props.updateAuthToken("sdf");
+        }}
+      >
+        test
+      </button>
       Home2
     </div>
   );
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    authToken: state.authToken
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateAuthToken: token => dispatch(updateAuthToken(token))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
