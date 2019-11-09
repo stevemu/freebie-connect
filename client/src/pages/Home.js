@@ -1,14 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import {updateAuthToken} from '../actions/auth';
+import React from "react";
+import { connect } from "react-redux";
+import { updateAuthToken } from "../actions/auth";
 
 function Home(props) {
   // console.log(props);
   return (
     <div>
-      <button onClick={() => {
-        props.updateAuthToken("sdf");
-      }}>test</button>
+      <button
+        onClick={() => {
+          props.updateAuthToken("sdf");
+        }}
+      >
+        test
+      </button>
       Home2
     </div>
   );
@@ -17,14 +21,14 @@ function Home(props) {
 const mapStateToProps = state => {
   return {
     authToken: state.authToken
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateAuthToken: (token) => dispatch(updateAuthToken(token))
-  }
-}
+    updateAuthToken: token => dispatch(updateAuthToken(token))
+  };
+};
 
 export default connect(
   mapStateToProps,

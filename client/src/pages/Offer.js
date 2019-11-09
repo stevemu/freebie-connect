@@ -1,23 +1,35 @@
-import React from 'react';
+import React from "react";
 
-import {Form, Button} from 'react-bootstrap';
+import { Form, Button } from "react-bootstrap";
 
 function Offer() {
   return (
-    <Form style={{width: "50%", margin: "0 25%"}}>
-      <Form.Group >
+    <Form style={{ width: "50%", margin: "0 25%" }}>
+      <Form.Group>
         <Form.Label>Name</Form.Label>
-        <Form.Control size="sm" type="text" placeholder="Enter your name here" />
+        <Form.Control
+          size="sm"
+          type="text"
+          placeholder="Enter your name here"
+        />
       </Form.Group>
 
-      <Form.Group >
+      <Form.Group>
         <Form.Label>Email</Form.Label>
-        <Form.Control size="sm" type="email" placeholder="Enter your contact email here" />
+        <Form.Control
+          size="sm"
+          type="email"
+          placeholder="Enter your contact email here"
+        />
       </Form.Group>
 
-      <Form.Group >
+      <Form.Group>
         <Form.Label>Item Title</Form.Label>
-        <Form.Control size="sm" type="text" placeholder="Enter the item you want" />
+        <Form.Control
+          size="sm"
+          type="text"
+          placeholder="Enter the item you want"
+        />
       </Form.Group>
 
       <Form.Group controlId="exampleForm.ControlTextarea1">
