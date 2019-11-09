@@ -5,8 +5,8 @@ import {Form, Button} from 'react-bootstrap';
 class Offer extends Component {
   constructor(props) {
     super(props);
-    
 
+    
   }
   render() {
     return (
