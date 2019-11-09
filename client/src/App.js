@@ -22,14 +22,14 @@ function App() {
         </ul>
       </nav>
       <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/offer" exact>
+        <Route path="/offer">
           <Offer />
         </Route>
         <Route path="/request">
           <Request />
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </Router>
