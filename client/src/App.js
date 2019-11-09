@@ -42,6 +42,7 @@ const onRedirectCallback = appState => {
 
 function App() {
   return (
+
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Auth0Provider
@@ -60,7 +61,7 @@ function App() {
                   <Link to="/offer">Offer</Link>
                 </li>
                 <li>
-                  <Link to="/request">Rquest</Link>
+                  <Link to="/request">Request</Link>
                 </li>
               </ul>
             </nav>
@@ -80,6 +81,7 @@ function App() {
         </Auth0Provider>
       </PersistGate>
     </Provider>
+
   );
 }
 
