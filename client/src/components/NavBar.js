@@ -37,15 +37,19 @@ const NavBar = () => {
             <Nav.Link className="d-inline p-4 bg-dark" href="/home">
               Home
             </Nav.Link>
-            <Nav.Link className="d-inline p-4 bg-dark" href="/offer">
-              Offer an Item
-            </Nav.Link>
-            <Nav.Link className="d-inline p-4 bg-dark" href="/request">
-              Request an Item
-            </Nav.Link>
-            <Nav.Link className="d-inline p-4 bg-dark " href="/profile">
-              Profile
-            </Nav.Link>
+            {isAuthenticated && (
+              <>
+                <Nav.Link className="d-inline p-4 bg-dark" href="/offer">
+                  Offer an Item
+                </Nav.Link>
+                <Nav.Link className="d-inline p-4 bg-dark" href="/request">
+                  Request an Item
+                </Nav.Link>
+                <Nav.Link className="d-inline p-4 bg-dark " href="/profile">
+                  Profile
+                </Nav.Link>
+              </>
+            )}
           </Nav>
 
           {!isAuthenticated && (

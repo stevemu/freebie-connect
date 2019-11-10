@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 
 const Profile = (props) => {
   let {authToken, user} = props;
-  // const { loading, getTokenSilently, user } = useAuth0();
   const [name, setName] = useState("");
 
   useEffect(() => {
