@@ -2,13 +2,20 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const bodyParser = require("body-parser");
-const {configRoutes} = require('./routes');
+
+const { configRoutes } = require("./routes");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+let port = 7500;
 
 configRoutes(app);
 
-let port = 7500;
+app.use(function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).json({});
+  }
+});
 
 switch (process.env.NODE_ENV) {
   case "production":
