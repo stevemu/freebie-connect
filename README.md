@@ -2,6 +2,10 @@
 
 2019 Codestellation Hackathon Project
 
+## Online Url
+
+https://freebie-connect.stevemu.com/
+
 ## Problem
 
 Some people would like offer their unused tools to the community around them free of charge. 
@@ -14,6 +18,7 @@ This website provides an easy to way for people to offer and request items to bo
 
 * React
 * Node.js
+* Redux
 * React-bootstrap
 * MongoDB
 
