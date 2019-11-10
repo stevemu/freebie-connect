@@ -9,7 +9,6 @@ const { configRoutes } = require("./routes");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(fallback('index.html', { root: `${__dirname}/../client/build` }))
 
 let port = 8060;
 
@@ -45,6 +44,7 @@ client.connect((err) => {
   switch (process.env.NODE_ENV) {
     case "production":
       app.use("/", express.static(path.resolve(__dirname, "../client/build")));
+      app.use(fallback('index.html', { root: `${__dirname}/../client/build` }))
       app.listen(port, null, () => {
         console.log("production server is running on " + port);
       });
