@@ -6,17 +6,15 @@ import {
 } from "react-router-dom";
 import useToken from "../hooks/useToken";
 import {createRequest} from '../api/api';
+import { connect } from "react-redux";
 
 function Request(props) {
+  let {authToken} = props;
 
   let history = useHistory();
   let [city, setCity] = useState("");
   let [desc, setDesc] = useState("");
   let [title, setTitle] = useState("");
-  let [token] = useToken();
-  if (!token) {
-    return <div>loading...</div>
-  }
 
   const formStyle = {
     width: "50%",
@@ -34,7 +32,7 @@ function Request(props) {
     }
 
     // make backend request
-    await createRequest(title, desc, city, token);
+    await createRequest(title, desc, city, authToken);
     history.push("/");
 
   }
@@ -89,4 +87,20 @@ function Request(props) {
   );
 }
 
-export default Request;
+const mapStateToProps = state => {
+  return {
+    authToken: state.authToken
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Request);
+

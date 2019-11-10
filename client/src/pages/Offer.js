@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import useToken from "../hooks/useToken";
 import { createOffer } from "../api/api";
+import { connect } from "react-redux";
 
-function Offer() {
+function Offer(props) {
+  let {authToken} = props;
   let history = useHistory();
   let [city, setCity] = useState("");
   let [desc, setDesc] = useState("");
   let [title, setTitle] = useState("");
-  let [token] = useToken();
-  if (!token) {
-    return <div>loading...</div>;
-  }
 
   const formStyle = {
     width: "50%",
@@ -30,7 +27,7 @@ function Offer() {
     }
 
     // make backend request
-    await createOffer(title, desc, city, token);
+    await createOffer(title, desc, city, authToken);
     history.push("/");
   }
 
@@ -83,5 +80,19 @@ function Offer() {
     </Form>
   );
 }
+const mapStateToProps = state => {
+  return {
+    authToken: state.authToken
+  };
+};
 
-export default Offer;
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Offer);
