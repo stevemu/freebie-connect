@@ -45,7 +45,7 @@ function Home(props) {
           <CardColumns>
             {offers.map(offer => {
               return (
-                <ItemCard key={offer._id} {...offer} borderStyle="danger" />
+                <ItemCard key={offer._id} {...offer} bg = "primary" text="white" style={{width:'18rem'}} />
               );
             })}
           </CardColumns>
