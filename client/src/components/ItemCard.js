@@ -9,7 +9,7 @@ function ItemCard(props) {
   return (
     <Card border={borderStyle}>
       {/* <Card.Header>Category</Card.Header> */}
-      <Card.Img variant="top" src={hammer} />
+      {/* <Card.Img variant="top" src={hammer} /> */}
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{desc}</Card.Text>

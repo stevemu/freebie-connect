@@ -29,55 +29,31 @@ function Home(props) {
     let offers = await getOffers(token);
     setOffers(offers);
   }
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // } else {
-  //   async function fetchRequests() {
-  //     let token = await getTokenSilently();
-  //     let requests = await getRequests(token);
-  //     setRequests(requests);
-  //   }
-  //   // fetchRequests();
-  //   async function fetchOffers() {
-  //     let token = await getTokenSilently();
-  //     let offers = await getOffers(token);
-  //     setOffers(offers);
-  //   }
-  //   // fetchOffers();
 
-  // }
-
-  const homeStyle = {
-    margin: "0 25%"
-  };
   return (
-    <div>
-      <div className="container">
-        <h1>Offers</h1>
-        <div className="row">
-          <div className="col-sm-6 col-sm-6">
-            <CardGroup>
-              {offers.map(offer => {
-                return (
-                  <ItemCard key={offer._id} {...offer} borderStyle="danger" />
-                );
-              })}
-            </CardGroup>
-          </div>
-          <div className="col-sm-6 col-sm-6">
-            <h1>Requests</h1>
-            <CardGroup>
-              {requests.map(request => {
-                return (
-                  <ItemCard
-                    key={request._id}
-                    {...request}
-                    borderStyle="danger"
-                  />
-                );
-              })}
-            </CardGroup>
-          </div>
+    <div className="container" style={{
+      padding: "10px 0"
+    }}>
+      <div className="row">
+        <div className="col-sm-6 col-sm-6">
+          <h1>Offers</h1>
+          <CardGroup>
+            {offers.map(offer => {
+              return (
+                <ItemCard key={offer._id} {...offer} borderStyle="danger" />
+              );
+            })}
+          </CardGroup>
+        </div>
+        <div className="col-sm-6 col-sm-6">
+          <h1>Requests</h1>
+          <CardGroup>
+            {requests.map(request => {
+              return (
+                <ItemCard key={request._id} {...request} borderStyle="danger" />
+              );
+            })}
+          </CardGroup>
         </div>
       </div>
     </div>
