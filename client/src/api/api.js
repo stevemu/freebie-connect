@@ -1,4 +1,4 @@
-export async function getRequest(url, token) {
+export async function get(url, token) {
   let res = await fetch(url, {
     headers: {
       Authorization: `Bearer ${token}`
@@ -7,8 +7,10 @@ export async function getRequest(url, token) {
   if (!res.ok) {
     throw "error for " + url;
   }
-  let json = await res.json();
-  return json;
+  console.log(res);
+  let j = await res.json();
+  console.log(j);
+  return j;
 }
 
 // export async function postRequest(url, body) {
@@ -63,6 +65,7 @@ export async function getRequest(url, token) {
 // }
 
 export async function getRequests(token) {
-  let json = await getRequest('/requests', token);
+  let json = await get('/requests', token);
+  console.log(json);
   return json;
 }
