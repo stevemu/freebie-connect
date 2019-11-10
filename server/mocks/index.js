@@ -12,6 +12,30 @@ async function initRequests(db) {
       city: "Braintree",
       desc: "I need a big shovel",
       createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+    },
+    {
+      title: "need shovel",
+      city: "Braintree",
+      desc: "I need a big shovel",
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+    },
+    {
+      title: "need shovel",
+      city: "Braintree",
+      desc: "I need a big shovel",
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+    },
+    {
+      title: "need shovel",
+      city: "Braintree",
+      desc: "I need a big shovel",
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+    },
+    {
+      title: "need shovel",
+      city: "Braintree",
+      desc: "I need a big shovel",
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
     }
   ]
 

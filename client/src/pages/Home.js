@@ -32,7 +32,7 @@ function Home(props) {
 
   return (
     <div className="container" style={{
-      padding: "10px 0"
+      padding: "10px 10px"
     }}>
       <div className="row">
         <div className="col-sm-6 col-sm-6">
