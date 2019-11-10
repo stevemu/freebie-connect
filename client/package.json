@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:7500",
+  "proxy": "http://localhost:8060",
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.5.0",
     "bootstrap": "^4.3.1",
@@ -16,6 +16,13 @@
     "redux-persist": "^6.0.0",
     "reactstrap": "^8.1.1"
   },
+  "apps": [
+    {
+      "name": "freebie",
+      "script": "node",
+      "args": "server"
+    }
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

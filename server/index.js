@@ -8,7 +8,7 @@ const { configRoutes } = require("./routes");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-let port = 7500;
+let port = 8060;
 
 
 
