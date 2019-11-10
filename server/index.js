@@ -2,12 +2,15 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const bodyParser = require("body-parser");
+let fallback = require('express-history-api-fallback')
 const MongoClient = require("mongodb").MongoClient;
 
 const { configRoutes } = require("./routes");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(fallback('index.html', { root: `${__dirname}/../client/build` }))
+
 let port = 8060;
 
 
