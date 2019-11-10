@@ -15,25 +15,12 @@ function Home(props) {
     async function init() {
       let token = await getTokenSilently();
       console.log(token);
-      let requests = await getRequests();
+      let requests = await getRequests(token);
+      console.log(requests);
     }
     init();
   }
 
-  console.log(getTokenSilently);
-  // console.log(getTokenSilently);
-  // const [requests, setRequests] = useState([]);
-  // console.log(requests);
-
-  // useEffect(() => {
-  //   initData();
-  // }, []);
-
-  // async function initData() {
-  //   const token = await getTokenSilently();
-  //   let requests = await getRequests(token);
-  //   setRequests(requests);
-  // }
 
   const homeStyle = {
     margin: "0 25%"
