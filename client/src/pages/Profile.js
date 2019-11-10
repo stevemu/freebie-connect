@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "../react-auth0-spa";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Alert } from "react-bootstrap";
 import { getProfile, updateProfile } from "../api/api";
 
 const Profile = () => {
@@ -26,6 +26,7 @@ const Profile = () => {
     e.preventDefault();
     let token = await getTokenSilently();
     await updateProfile(token, name);
+    alert("Your Profile is up to date!")
   }
 
   return (
