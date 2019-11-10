@@ -12,7 +12,6 @@ function ItemCard(props) {
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{desc}</Card.Text>
-        <Card.Text>posted by: {createdByEmail}</Card.Text>
       </Card.Body>
     </Card>
   );

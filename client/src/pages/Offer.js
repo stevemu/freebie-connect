@@ -65,7 +65,7 @@ function Offer(props) {
         <Form.Control
           value={desc}
           as="textarea"
-          placeholder="Describe what you need here"
+          placeholder="Describe what you want to offer or lend here. Be sure to include how people should contact you, eg. phone number or email."
           rows="5"
           name="desc"
           onChange={e => {
