@@ -31,12 +31,12 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-           <h3> <Nav.Link href="/home">Home</Nav.Link></h3>
+           <h4> <Nav.Link href="/home">Home</Nav.Link></h4>
             {isAuthenticated && (
               <>
-                <Nav.Link href="/offer">Offer an Item</Nav.Link>
-                <Nav.Link href="/request">Request an Item</Nav.Link>
-                <Nav.Link href="/profile">Profile</Nav.Link>
+                <h4><Nav.Link href="/offer">Offer an Item</Nav.Link></h4>
+                <h4><Nav.Link href="/request">Request an Item</Nav.Link></h4>
+                <h4><Nav.Link href="/profile">Profile</Nav.Link></h4>
               </>
             )}
           </Nav>
