@@ -1,6 +1,7 @@
 async function getAllOffers(db) {
   const collection = db.collection('offers');
   let docs = await collection.find({}).toArray();
+
   return docs;
 }
 exports.getAllOffers = getAllOffers;

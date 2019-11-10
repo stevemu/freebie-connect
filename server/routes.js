@@ -13,11 +13,13 @@ function configRoutes(app) {
   app.post("/requests", checkJwt, async (req, res) => {
     let {title, city, desc} = req.body;
     let userId = req.user.sub;
+    // let userEmail = req.user.email;
     let db = req.db;
 
     let newR = {
       title, city, desc,
-      createdBy: userId
+      createdBy: userId,
+      // createdByEmail: userEmail
     }
     let result = await createRequest(db, newR);
     return res.json({id: result.insertedId});
@@ -31,11 +33,14 @@ function configRoutes(app) {
   app.post("/offers", checkJwt, async (req, res) => {
     let {title, city, desc} = req.body;
     let userId = req.user.sub;
+    // let userEmail = req.user.email;
+    // console.log(req.user);
     let db = req.db;
 
     let newR = {
       title, city, desc,
-      createdBy: userId
+      createdBy: userId,
+      // createdByEmail: userEmail
     }
     let result = await createOffer(db, newR);
     return res.json({id: result.insertedId});

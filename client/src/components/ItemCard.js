@@ -5,15 +5,13 @@ import Button from "react-bootstrap/Button";
 import hammer from "../images/shovel.jpg";
 
 function ItemCard(props) {
-  let { title, desc, borderStyle } = props;
+  let { title, desc, borderStyle, createdByEmail } = props;
   return (
     <Card border={borderStyle}>
-      {/* <Card.Header>Category</Card.Header> */}
-      {/* <Card.Img variant="top" src={hammer} /> */}
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{desc}</Card.Text>
-        <Button variant="primary">Respond</Button>
+        <Card.Text>posted by: {createdByEmail}</Card.Text>
       </Card.Body>
     </Card>
   );

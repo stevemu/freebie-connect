@@ -5,37 +5,43 @@ async function initRequests(db) {
       title: "need a laptop",
       city: "Braintree",
       desc: "I need a laptop with a 12 core cpu",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     },
     {
       title: "need shovel 1",
       city: "Braintree",
       desc: "I need a big shovel",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     },
     {
       title: "need shovel 2",
       city: "Braintree",
       desc: "I need a big shovel",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     },
     {
       title: "need shovel 3",
       city: "Braintree",
       desc: "I need a big shovel",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     },
     {
       title: "need shovel 4",
       city: "Braintree",
       desc: "I need a big shovel",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     },
     {
       title: "need shovel 5",
       city: "Braintree",
       desc: "I need a big shovel",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     }
   ]
 
@@ -52,13 +58,15 @@ async function initOffers(db) {
       title: "offer a laptop",
       city: "Braintree",
       desc: "I have an used apple laptop",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     },
     {
       title: "offer a shovel",
       city: "Braintree",
       desc: "I have a 2 year old shovel during summer for you to use for free",
-      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96",
+      createdByEmail: "skycloud112@gmail.com"
     }
   ]
 
