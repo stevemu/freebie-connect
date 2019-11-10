@@ -45,35 +45,35 @@ export async function del(url, body = {}, token) {
 }
 
 export async function getRequests(token) {
-  let json = await get('/requests', token);
+  let json = await get('/api/requests', token);
   return json;
 }
 
 export async function createRequest(title, desc, city, token) {
-  let json = await post("/requests", {
+  let json = await post("/api/requests", {
     title, desc, city
   }, token);
   return json;
 }
 
 export async function getOffers(token) {
-  let json = await get('/offers', token);
+  let json = await get('/api/offers', token);
   return json;
 }
 
 export async function createOffer(title, desc, city, token) {
-  let json = await post("/offers", {
+  let json = await post("/api/offers", {
     title, desc, city
   }, token);
   return json;
 }
 
 export async function getProfile(token) {
-  let profile = await get("/profile", token);
+  let profile = await get("/api/profile", token);
   return profile;
 }
 
 export async function updateProfile(token, name) {
-  let result = await post("/profile", {name}, token);
+  let result = await post("/api/profile", {name}, token);
   return result;
 }

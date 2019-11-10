@@ -5,12 +5,12 @@ let {updateProfile, getProfile} = require("./profile");
 
 function configRoutes(app) {
 
-  app.get("/requests", async (req, res) => {
+  app.get("/api/requests", async (req, res) => {
     let docs = await getAllRequests(req.db);
     return res.json(docs);
   })
 
-  app.post("/requests", checkJwt, async (req, res) => {
+  app.post("/api/requests", checkJwt, async (req, res) => {
     let {title, city, desc} = req.body;
     let userId = req.user.sub;
     // let userEmail = req.user.email;
@@ -25,12 +25,12 @@ function configRoutes(app) {
     return res.json({id: result.insertedId});
   })
 
-  app.get("/offers", async (req, res) => {
+  app.get("/api/offers", async (req, res) => {
     let docs = await getAllOffers(req.db);
     return res.json(docs);
   })
 
-  app.post("/offers", checkJwt, async (req, res) => {
+  app.post("/api/offers", checkJwt, async (req, res) => {
     let {title, city, desc} = req.body;
     let userId = req.user.sub;
     // let userEmail = req.user.email;
@@ -46,7 +46,7 @@ function configRoutes(app) {
     return res.json({id: result.insertedId});
   })
 
-  app.post("/profile", checkJwt, async (req, res) => {
+  app.post("/api/profile", checkJwt, async (req, res) => {
     let {name} = req.body;
     let userId = req.user.sub;
     let db = req.db;
@@ -60,7 +60,7 @@ function configRoutes(app) {
   })
 
 
-  app.get("/profile", checkJwt, async (req, res) => {
+  app.get("/api/profile", checkJwt, async (req, res) => {
     let userId = req.user.sub;
     let db = req.db;
     let profile = await getProfile(db, userId);
