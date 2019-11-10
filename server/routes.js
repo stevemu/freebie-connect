@@ -9,6 +9,11 @@ function configRoutes(app) {
     return res.json(docs);
   })
 
+  app.post("/requests", checkJwt, async (req, res) => {
+    // console.log(req.user);
+    // let docs = await getAllRequests(req.db);
+    // return res.json(docs);
+  })
 }
 
 exports.configRoutes = configRoutes;
