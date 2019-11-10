@@ -5,13 +5,14 @@ import { Provider } from "react-redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import { PersistGate } from "redux-persist/integration/react";
-import NavBar from './components/NavBar';
 
+import NavBar from './components/NavBar';
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Request from "./pages/Request";
+import Profile from "./pages/Profile";
 import rootReducer from "./reducers";
-import { useAuth0 } from "./react-auth0-spa";
+import PrivateRoute from "./components/PrivateRoute";
 
 // redux stuff
 const persistConfig = {
@@ -31,27 +32,17 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Router>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/offer">Offer</Link>
-              </li>
-              <li>
-                <Link to="/request">Request</Link>
-              </li>
-            </ul>
-          </nav>
           <NavBar />
           <Switch>
-            <Route path="/offer">
+            <PrivateRoute path="/offer">
               <Offer />
-            </Route>
-            <Route path="/request">
+            </PrivateRoute>
+            <PrivateRoute path="/request">
               <Request />
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/profile">
+              <Profile />
+            </PrivateRoute>
             <Route path="/">
               <Home />
             </Route>
