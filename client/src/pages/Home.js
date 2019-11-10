@@ -9,25 +9,24 @@ import { getRequests, getOffers } from "../api/api";
 import ItemCard from "../components/ItemCard";
 
 function Home(props) {
-  const { loading, getTokenSilently } = useAuth0();
+  let {authToken} = props;
+
   const [requests, setRequests] = useState([]);
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    if (loading) return;
+    if (!authToken) return;
     fetchRequests();
     fetchOffers();
-  }, [loading]);
+  }, [authToken]);
 
   async function fetchRequests() {
-    let token = await getTokenSilently();
-    let requests = await getRequests(token);
+    let requests = await getRequests(authToken);
     setRequests(requests);
   }
 
   async function fetchOffers() {
-    let token = await getTokenSilently();
-    let offers = await getOffers(token);
+    let offers = await getOffers(authToken);
     setOffers(offers);
   }
 
