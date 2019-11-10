@@ -47,7 +47,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
-          <Footer> </Footer>
+          <Footer />
         </Router>
       </PersistGate>
     </Provider>
