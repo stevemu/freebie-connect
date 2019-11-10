@@ -48,3 +48,10 @@ export async function getRequests(token) {
   let json = await get('/requests', token);
   return json;
 }
+
+export async function createRequest(title, desc, city, token) {
+  let json = await post("/requests", {
+    title, desc, city
+  }, token);
+  return json;
+}

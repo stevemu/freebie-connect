@@ -4,3 +4,10 @@ async function getAllRequests(db) {
   return docs;
 }
 exports.getAllRequests = getAllRequests;
+
+async function createRequest(db, r) {
+  const collection = db.collection('requests');
+  let docs = await collection.insertOne(r);
+  return docs;
+}
+exports.createRequest = createRequest;

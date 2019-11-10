@@ -10,11 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 let port = 7500;
 
-app.use(function(err, req, res, next) {
-  if (err.name === "UnauthorizedError") {
-    res.status(401).json({});
-  }
-});
+
 
 // configure mongo db
 const MONGO_URI =
@@ -23,6 +19,13 @@ const client = new MongoClient(MONGO_URI, { useUnifiedTopology: true });
 
 client.connect((err) => {
   let db = client.db("freebie-connect");
+
+  app.use(function(err, req, res, next) {
+    if (err.name === "UnauthorizedError") {
+      res.status(401).json({error: err});
+    }
+    next();
+  });
 
   app.use((req, res, next) => {
     req.db = db;
