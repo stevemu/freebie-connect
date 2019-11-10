@@ -41,7 +41,7 @@ client.connect((err) => {
 
   switch (process.env.NODE_ENV) {
     case "production":
-      app.use("/", express.static(path.resolve(__dirname, "../web/build")));
+      app.use("/", express.static(path.resolve(__dirname, "../client/build")));
       app.listen(port, null, () => {
         console.log("production server is running on " + port);
       });
