@@ -26,6 +26,7 @@ client.connect((err) => {
 
   app.use((req, res, next) => {
     req.db = db;
+    next();
   })
 
   configRoutes(app);
