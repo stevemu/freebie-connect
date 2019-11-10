@@ -17,6 +17,7 @@ import { getRequests } from "../api/api";
 
 function Home(props) {
   const { loading, getTokenSilently } = useAuth0();
+  const [r, setR] = useState([]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -25,7 +26,8 @@ function Home(props) {
       let token = await getTokenSilently();
       // console.log(token);
       let requests = await getRequests(token);
-      console.log(requests);
+      // console.log(requests);
+      setR(requests);
     }
     init();
   }

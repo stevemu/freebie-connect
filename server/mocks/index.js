@@ -4,12 +4,16 @@ async function initRequests(db) {
     {
       id: 1,
       title: "need a laptop",
-      desc: "I need a laptop with a 12 core cpu"
+      city: "Braintree",
+      desc: "I need a laptop with a 12 core cpu",
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
     },
     {
       id: 2,
       title: "need shovel",
-      desc: "I need a big shovel"
+      city: "Braintree",
+      desc: "I need a big shovel",
+      createdBy: "auth0|5dc76ce9401e7a0e7e7fbe96"
     }
   ]
 
