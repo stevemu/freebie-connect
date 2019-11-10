@@ -6,7 +6,7 @@ import {Navbar, Nav} from "react-bootstrap";
 function Footer() {
     return (
         
-      <div className="fixed-bottom">
+    //   <div className="fixed-bottom">
         <div className="footer">
           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -19,7 +19,7 @@ function Footer() {
             </Navbar.Collapse>
           </Navbar>
         </div>
-      </div>
+    //   </div>
     );
 }
 export default Footer;

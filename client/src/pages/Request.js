@@ -9,7 +9,7 @@ class Request extends React.Component {
     };
 
     return (
-      <Form style={formStyle}>
+      <Form style={{ width: "50%", margin: "0 25%" }}>
         <Form.Group controlId="requesTtitle">
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Enter what you need here" />
