@@ -13,7 +13,7 @@ import Request from "./pages/Request";
 import Profile from "./pages/Profile";
 import rootReducer from "./reducers";
 import PrivateRoute from "./components/PrivateRoute";
-
+import Footer from "./components/Footer";
 // redux stuff
 const persistConfig = {
   key: "root",
@@ -47,6 +47,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
+          <Footer> </Footer>
         </Router>
       </PersistGate>
     </Provider>

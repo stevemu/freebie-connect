@@ -12,7 +12,6 @@ function Home(props) {
     </div>
   );
     
-  
 }
 
 const mapStateToProps = state => {
