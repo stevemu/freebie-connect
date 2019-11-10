@@ -2,19 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import { Form, Button } from "react-bootstrap";
 import { getProfile, updateProfile } from "../api/api";
+import { connect } from "react-redux";
 
-const Profile = () => {
-  const { loading, getTokenSilently, user } = useAuth0();
+const Profile = (props) => {
+  let {authToken} = props;
+  // const { loading, getTokenSilently, user } = useAuth0();
   const [name, setName] = useState("");
 
   useEffect(() => {
-    if (loading) return;
+    if (!authToken) return;
     fetchProfile();
-  }, [loading]);
+  }, [authToken]);
 
   async function fetchProfile() {
-    let token = await getTokenSilently();
-    let profile = await getProfile(token);
+    let profile = await getProfile(authToken);
     setName(profile.name);
   }
 
@@ -24,8 +25,7 @@ const Profile = () => {
 
   async function onUpdateProfile(e) {
     e.preventDefault();
-    let token = await getTokenSilently();
-    await updateProfile(token, name);
+    await updateProfile(authToken, name);
   }
 
   return (
@@ -33,7 +33,7 @@ const Profile = () => {
       <Form.Group controlId="requesTtitle">
         <Form.Group controlId="reqDescription">
           <Form.Label>Email</Form.Label>
-          <p>{user && user.email}</p>
+          <p>{"email"}</p>
         </Form.Group>
 
         <Form.Label>Name</Form.Label>
@@ -52,4 +52,19 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+const mapStateToProps = state => {
+  return {
+    authToken: state.authToken
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile);
