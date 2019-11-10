@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { updateAuthToken } from "../actions/auth";
 import CardGroup from "react-bootstrap/CardGroup";
+import CardColumns from "react-bootstrap/CardColumns";
 import { useAuth0 } from "../react-auth0-spa";
 import { getRequests, getOffers } from "../api/api";
 
@@ -30,33 +31,36 @@ function Home(props) {
     setOffers(offers);
   }
 
+
   return (
-    <div className="container" style={{
-      padding: "10px 10px"
-    }}>
-      <div className="row">
-        <div className="col-sm-6 col-sm-6">
+    <div
+      className="container"
+      style={{
+        padding: "10px 10px"
+      }}
+    >
+      {/* <div className="row"> */}
+        <div className="d-flex flex-column"> 
           <h1>Offers</h1>
-          <CardGroup>
+          <CardColumns>
             {offers.map(offer => {
               return (
                 <ItemCard key={offer._id} {...offer} borderStyle="danger" />
               );
             })}
-          </CardGroup>
-        </div>
-        <div className="col-sm-6 col-sm-6">
+          </CardColumns>
+
           <h1>Requests</h1>
-          <CardGroup>
+          <CardColumns>
             {requests.map(request => {
               return (
                 <ItemCard key={request._id} {...request} borderStyle="danger" />
               );
             })}
-          </CardGroup>
+          </CardColumns>
         </div>
-      </div>
-    </div>
+       </div>
+    // </div>
   );
 }
 

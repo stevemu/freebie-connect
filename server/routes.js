@@ -1,6 +1,7 @@
 let {checkJwt} = require("./util/auth");
 let {getAllRequests, createRequest} = require("./requests");
 let {getAllOffers, createOffer} = require("./offers");
+let {updateProfile, getProfile} = require("./profile");
 
 function configRoutes(app) {
 
@@ -38,6 +39,27 @@ function configRoutes(app) {
     }
     let result = await createOffer(db, newR);
     return res.json({id: result.insertedId});
+  })
+
+  app.post("/profile", checkJwt, async (req, res) => {
+    let {name} = req.body;
+    let userId = req.user.sub;
+    let db = req.db;
+
+    let newProfile = {
+      name,
+      userId
+    }
+    let result = await updateProfile(db, userId, newProfile);
+    return res.json({result});
+  })
+
+
+  app.get("/profile", checkJwt, async (req, res) => {
+    let userId = req.user.sub;
+    let db = req.db;
+    let profile = await getProfile(db, userId);
+    return res.json(profile);
   })
 }
 

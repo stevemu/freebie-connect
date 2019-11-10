@@ -67,3 +67,13 @@ export async function createOffer(title, desc, city, token) {
   }, token);
   return json;
 }
+
+export async function getProfile(token) {
+  let profile = await get("/profile", token);
+  return profile;
+}
+
+export async function updateProfile(token, name) {
+  let result = await post("/profile", {name}, token);
+  return result;
+}
