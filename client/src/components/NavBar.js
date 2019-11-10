@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import { Link } from "react-router-dom";
 import NavLink from "react-bootstrap/NavLink";
+import LogoImage from "../images/logo.jpg";
 import {
   Navbar,
   Nav,
@@ -16,6 +17,13 @@ const NavBar = () => {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <div>
+          <img src={LogoImage}
+            width={60} height={70}
+             />
+             />
+        </div>
+
         <Navbar.Brand
           href="/home"
           style={{
