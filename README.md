@@ -24,10 +24,10 @@ This website provides an easy to way for people to offer and request items to bo
 
 ## Team Members
 
-Majda (UI)
-Naima (UI)
-Jing Liu (UI)
-Steve Mu (UI & business logic & backend)
+* Majda Hichy (PM & Frontend)
+* Naima Matahri (Frontend)
+* Jing Liu (Frontend)
+* Steve Mu (Techlead)
 
 ## roadmap
 
