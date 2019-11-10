@@ -1,22 +1,18 @@
-import React from "react";
+
+import React, {useState } from 'react';
 import { connect } from "react-redux";
 import { updateAuthToken } from "../actions/auth";
-import { useAuth0 } from "../react-auth0-spa";
 
 function Home(props) {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          props.updateAuthToken("sdf");
-        }}
-      >
-        test
-      </button>
-      Home2
+      Home
+      
     </div>
   );
+    
+  
 }
 
 const mapStateToProps = state => {
