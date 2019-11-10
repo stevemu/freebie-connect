@@ -16,13 +16,7 @@
     "redux-persist": "^6.0.0",
     "reactstrap": "^8.1.1"
   },
-  "apps": [
-    {
-      "name": "freebie",
-      "script": "node",
-      "args": "server"
-    }
-  ],
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

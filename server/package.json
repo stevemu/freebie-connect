@@ -10,6 +10,13 @@
     "jwks-rsa": "^1.6.0",
     "mongodb": "^3.3.3"
   },
+  "apps": [
+    {
+      "name": "freebie",
+      "script": "node",
+      "args": "index"
+    }
+  ],
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
