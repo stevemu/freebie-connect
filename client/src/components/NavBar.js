@@ -20,7 +20,7 @@ const NavBar = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand
-          href="#home"
+          href="/home"
           style={{
             fontFamily: "Yeon Sung, cursive",
             fontWeight: "bold"
