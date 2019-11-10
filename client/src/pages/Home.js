@@ -9,7 +9,7 @@ import { getRequests, getOffers } from "../api/api";
 import ItemCard from "../components/ItemCard";
 
 function Home(props) {
-  let {authToken} = props;
+  let { authToken } = props;
 
   const [requests, setRequests] = useState([]);
   const [offers, setOffers] = useState([]);
