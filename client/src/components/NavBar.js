@@ -5,11 +5,7 @@ import NavLink from 'react-bootstrap/NavLink';
 import {
   Navbar,
   Nav,
-  Container,
-  Form,
-  NavDropdown,
   Button,
-  FormControl,
   ButtonToolbar,
 } from 'react-bootstrap';
 
@@ -30,18 +26,37 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-           <h4> <Nav.Link href="/home">Home</Nav.Link></h4>
+          <Nav
+            className="mr-auto"
+            style={{
+              fontFamily: "Jomolhari, serif",
+              fontWeight: "bold"
+            }}
+
+          
+
+
+          >
+            <h4 class="active">
+              {" "}
+              <Nav.Link href="/home">Home</Nav.Link>
+            </h4>
             {isAuthenticated && (
-              <>
-                <h4><Nav.Link href="/offer">Offer an Item</Nav.Link></h4>
-                <h4><Nav.Link href="/request">Request an Item</Nav.Link></h4>
-                <h4><Nav.Link href="/profile">Profile</Nav.Link></h4>
+              < >
+                <h4>
+                  <Nav.Link href="/offer">Offer an Item</Nav.Link>
+                </h4>
+                <h4>
+                  <Nav.Link href="/request">Request an Item</Nav.Link>
+                </h4>
+                <h4>
+                  <Nav.Link href="/profile">Profile</Nav.Link>
+                </h4>
               </>
             )}
           </Nav>
-          <Nav>
-            <ButtonToolbar>
+          <Nav >
+            <ButtonToolbar  >
               {!isAuthenticated && (
                 <Button
                   variant="info"
