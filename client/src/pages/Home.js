@@ -36,9 +36,9 @@ function Home(props) {
   };
   return (
     <div>
-      <div classname="container">
+      <div className="container">
         <h1> Offers</h1>
-        <div classname="row">
+        <div className="row">
           <div className="col-sm-6 col-sm-6">
             <CardGroup>
               <Card border="success" >
