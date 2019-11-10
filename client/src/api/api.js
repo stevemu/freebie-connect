@@ -1,5 +1,14 @@
+import { useAuth0 } from "../react-auth0-spa";
+
 export async function getRequest(url) {
-  let res = await fetch(url);
+  const { getTokenSilently } = useAuth0();
+  const token = await getTokenSilently();
+
+  let res = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
   if (!res.ok) {
     throw "error for " + url;
   }
@@ -8,11 +17,15 @@ export async function getRequest(url) {
 }
 
 export async function postRequest(url, body) {
+  const { getTokenSilently } = useAuth0();
+  const token = await getTokenSilently();
+
   let res = await fetch(url, {
     method: "POST",
     body: JSON.stringify(body),
     headers: {
-      "Content-type": "application/json; charset=UTF-8"
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`
     }
   });
   if (!res.ok) {
@@ -23,11 +36,15 @@ export async function postRequest(url, body) {
 }
 
 export async function deleteRequest(url, body = {}) {
+  const { getTokenSilently } = useAuth0();
+  const token = await getTokenSilently();
+
   let res = await fetch(url, {
     method: "DELETE",
     body: JSON.stringify(body),
     headers: {
-      "Content-type": "application/json; charset=UTF-8"
+      "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`
     }
   });
   if (!res.ok) {
@@ -47,7 +64,7 @@ export async function getPosts() {
       id: 2,
       name: "freebie2"
     }
-  ]
+  ];
 }
 
 export async function getRequests() {
@@ -60,5 +77,5 @@ export async function getRequests() {
       id: 102,
       name: "want freebie2"
     }
-  ]
+  ];
 }

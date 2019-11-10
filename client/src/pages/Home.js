@@ -1,25 +1,91 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { updateAuthToken } from "../actions/auth";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
+import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
+import Button from "react-bootstrap/Button";
 // import ListGroup from "react-bootstrap/ListGroup";
+import test from "../images/test.png";
+import test1 from "../images/shovel.jpg";
+import test2 from "../images/hammer.jpg";
+
+import ListGroup from "react-bootstrap/ListGroup";
+
 function Home(props) {
   const homeStyle = {
     margin: "0 25%"
   };
   return (
     <div>
-      <Card style={{width:'18rem'}}>
-        <Card.Img variant="top" src="images/test.png/100px180"/>
-        <Card.Body>
-          <Card.Title> Offer </Card.Title>
-          <Card.Text>
-          Got Shovel for you to use
-          </Card.Text>
-          <Button variant="primary">Go Get It</Button>
-        </Card.Body>
-      </Card>
+      <div classname="container">
+        <h1> Offers</h1>
+        <div classname="row">
+          <div className="col-sm-6 col-sm-6">
+            <CardGroup>
+              <Card border="success" >
+                {/* <Card.Header>Category</Card.Header> */}
+                <Card.Img variant="top" src={test} />
+                <Card.Body>
+                  <Card.Title> Offering Latter </Card.Title>
+                  <Card.Text>Got Latter for you to use</Card.Text>
+                  <Button variant="primary">Go Get It</Button>
+                </Card.Body>
+              </Card>
+              <Card border="success" >
+                {/* <Card.Header>Category</Card.Header> */}
+                <Card.Img variant="top" src={test1} />
+                <Card.Body>
+                  <Card.Title> Offering Shovel </Card.Title>
+                  <Card.Text>Got Shovel for you to use</Card.Text>
+                  <Button variant="primary">Go Get It</Button>
+                </Card.Body>
+              </Card>
+              <Card border="success" >
+                {/* <Card.Header>Category</Card.Header> */}
+                <Card.Img variant="top" src={test2} />
+                <Card.Body>
+                  <Card.Title> Offering Hammer </Card.Title>
+                  <Card.Text>Got Hammer for you to use</Card.Text>
+                  <Button variant="primary">Go Get It</Button>
+                </Card.Body>
+              </Card>
+            </CardGroup>
+          </div>
+          <div className="col-sm-6 col-sm-6">
+            <h1>Requests</h1>
+            <CardGroup>
+              <Card border="danger" >
+                {/* <Card.Header>Category</Card.Header> */}
+                <Card.Img variant="top" src={test} />
+                <Card.Body>
+                  <Card.Title> Need Skiing Gears </Card.Title>
+                  <Card.Text>Need to borrow skiing gears</Card.Text>
+                  <Button variant="primary">Respond</Button>
+                </Card.Body>
+              </Card>
+              <Card border="danger">
+                {/* <Card.Header>Category</Card.Header> */}
+                <Card.Img variant="top" src={test2} />
+                <Card.Body>
+                  <Card.Title> Need Hammer </Card.Title>
+                  <Card.Text>Need to borrow a Hammer</Card.Text>
+                  <Button variant="primary">Respond</Button>
+                </Card.Body>
+              </Card>
+              <Card border="danger" >
+                {/* <Card.Header>Category</Card.Header> */}
+                <Card.Img variant="top" src={test1} />
+                <Card.Body>
+                  <Card.Title> Need a Shovel </Card.Title>
+                  <Card.Text>Need to borrow a shovel</Card.Text>
+                  <Button variant="primary">Respond</Button>
+                </Card.Body>
+              </Card>
+            </CardGroup>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
