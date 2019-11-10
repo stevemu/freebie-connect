@@ -36,6 +36,7 @@ function Request(props) {
     // make backend request
     await createRequest(title, desc, city, token);
     history.push("/");
+
   }
 
   return (
