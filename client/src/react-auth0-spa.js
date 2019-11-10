@@ -24,6 +24,7 @@ export const Auth0Provider = ({
 
       if (window.location.search.includes("code=")) {
         const { appState } = await auth0FromHook.handleRedirectCallback();
+        // debugger;
         onRedirectCallback(appState);
       }
 
@@ -64,6 +65,9 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
     setUser(user);
   };
+
+
+
   return (
     <Auth0Context.Provider
       value={{

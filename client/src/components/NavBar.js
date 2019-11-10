@@ -14,6 +14,12 @@ import {
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
+  let returnTo = "http://localhost:3000";
+  if (process.env.NODE_ENV == "production") {
+    returnTo = "https://freebie-connect.stevemu.com/";
+  } 
+
+
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -70,7 +76,7 @@ const NavBar = () => {
             </Button>
           )}
           {isAuthenticated && (
-            <Button variant="info" size="lg" onClick={() => logout()}>
+            <Button variant="info" size="lg" onClick={() => logout({returnTo})}>
               Log out
             </Button>
           )}
