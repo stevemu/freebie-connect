@@ -53,9 +53,9 @@ const NavBar = () => {
                 <Nav.Link className="d-inline p-4 bg-dark" href="/request">
                   Request an Item
                 </Nav.Link>
-                {/* <Nav.Link className="d-inline p-4 bg-dark " href="/profile">
+                <Nav.Link className="d-inline p-4 bg-dark " href="/profile">
                   Profile
-                </Nav.Link> */}
+                </Nav.Link>
               </>
             )}
           </Nav>

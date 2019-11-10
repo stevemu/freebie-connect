@@ -11,7 +11,7 @@ const Profile = (props) => {
   useEffect(() => {
     if (!authToken) return;
     fetchProfile();
-  }, [authToken]);
+  }, [authToken, user]);
 
   async function fetchProfile() {
     let profile = await getProfile(authToken);
