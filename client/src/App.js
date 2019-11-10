@@ -6,14 +6,9 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import { PersistGate } from "redux-persist/integration/react";
 
-import NavBar from './components/NavBar';
-import Home from "./pages/Home";
-import Offer from "./pages/Offer";
-import Request from "./pages/Request";
-import Profile from "./pages/Profile";
 import rootReducer from "./reducers";
-import PrivateRoute from "./components/PrivateRoute";
-import Footer from "./components/Footer";
+import Main from "./Main";
+
 // redux stuff
 const persistConfig = {
   key: "root",
@@ -32,22 +27,7 @@ function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Router>
-          <NavBar />
-          <Switch>
-            <PrivateRoute path="/offer">
-              <Offer />
-            </PrivateRoute>
-            <PrivateRoute path="/request">
-              <Request />
-            </PrivateRoute>
-            <PrivateRoute path="/profile">
-              <Profile />
-            </PrivateRoute>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-          <Footer />
+          <Main />
         </Router>
       </PersistGate>
     </Provider>

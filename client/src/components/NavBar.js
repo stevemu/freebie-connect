@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import { Link } from "react-router-dom";
-import NavLink from 'react-bootstrap/NavLink';
+import NavLink from "react-bootstrap/NavLink";
 import {
   Navbar,
   Nav,
@@ -10,8 +10,8 @@ import {
   NavDropdown,
   Button,
   FormControl,
-  ButtonToolbar,
-} from 'react-bootstrap';
+  ButtonToolbar
+} from "react-bootstrap";
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
@@ -31,14 +31,23 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-           <h4> <Nav.Link href="/home">Home</Nav.Link></h4>
-            {isAuthenticated && (
+            <h4>
+              <Nav.Link href="/home">Home</Nav.Link>
+            </h4>
+            <h4>
+              <Nav.Link href="/offer">Offer an Item</Nav.Link>
+            </h4>
+            <h4>
+              <Nav.Link href="/request">Request an Item</Nav.Link>
+            </h4>
+            <h4>
+              <Nav.Link href="/profile">Profile</Nav.Link>
+            </h4>
+            {/* {isAuthenticated && (
               <>
-                <h4><Nav.Link href="/offer">Offer an Item</Nav.Link></h4>
-                <h4><Nav.Link href="/request">Request an Item</Nav.Link></h4>
-                <h4><Nav.Link href="/profile">Profile</Nav.Link></h4>
+                
               </>
-            )}
+            )} */}
           </Nav>
           <Nav>
             <ButtonToolbar>

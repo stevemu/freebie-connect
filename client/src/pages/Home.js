@@ -31,7 +31,6 @@ function Home(props) {
     setOffers(offers);
   }
 
-
   return (
     <div
       className="container"
@@ -39,27 +38,24 @@ function Home(props) {
         padding: "10px 10px"
       }}
     >
-      {/* <div className="row"> */}
-        <div className="d-flex flex-column"> 
-          <h1>Offers</h1>
-          <CardColumns>
-            {offers.map(offer => {
-              return (
-                <ItemCard key={offer._id} {...offer} borderStyle="danger" />
-              );
-            })}
-          </CardColumns>
+      <div className="d-flex flex-column">
+        <h1>Offers</h1>
+        <CardColumns>
+          {offers.map(offer => {
+            return <ItemCard key={offer._id} {...offer} borderStyle="danger" />;
+          })}
+        </CardColumns>
 
-          <h1>Requests</h1>
-          <CardColumns>
-            {requests.map(request => {
-              return (
-                <ItemCard key={request._id} {...request} borderStyle="danger" />
-              );
-            })}
-          </CardColumns>
-        </div>
-       </div>
+        <h1>Requests</h1>
+        <CardColumns>
+          {requests.map(request => {
+            return (
+              <ItemCard key={request._id} {...request} borderStyle="danger" />
+            );
+          })}
+        </CardColumns>
+      </div>
+    </div>
     // </div>
   );
 }
