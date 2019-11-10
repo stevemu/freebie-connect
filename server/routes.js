@@ -5,7 +5,7 @@ let {updateProfile, getProfile} = require("./profile");
 
 function configRoutes(app) {
 
-  app.get("/requests", checkJwt, async (req, res) => {
+  app.get("/requests", async (req, res) => {
     let docs = await getAllRequests(req.db);
     return res.json(docs);
   })
@@ -25,7 +25,7 @@ function configRoutes(app) {
     return res.json({id: result.insertedId});
   })
 
-  app.get("/offers", checkJwt, async (req, res) => {
+  app.get("/offers", async (req, res) => {
     let docs = await getAllOffers(req.db);
     return res.json(docs);
   })
