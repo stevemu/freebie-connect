@@ -1,16 +1,7 @@
 import React from "react";
 // import './Footer.css';
 
-import {
-  Navbar,
-  Nav,
-  Container,
-  Form,
-  NavDropdown,
-  Button,
-  FormControl,
-  ButtonToolbar
-} from "react-bootstrap";
+import {Navbar, Nav} from "react-bootstrap";
 
 function Footer() {
   return (
