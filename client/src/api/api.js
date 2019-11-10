@@ -55,3 +55,15 @@ export async function createRequest(title, desc, city, token) {
   }, token);
   return json;
 }
+
+export async function getOffers(token) {
+  let json = await get('/offers', token);
+  return json;
+}
+
+export async function createOffer(title, desc, city, token) {
+  let json = await post("/offers", {
+    title, desc, city
+  }, token);
+  return json;
+}

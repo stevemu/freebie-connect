@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useAuth0 } from "../react-auth0-spa";
 import {
   useHistory
 } from "react-router-dom";
@@ -21,9 +20,10 @@ function Request(props) {
 
   const formStyle = {
     width: "50%",
-    margin: "0 25%"
+    margin: "0 25%",
+    padding: "10px 0"
   };
-
+  
   async function onSubmit(e) {
     e.preventDefault();
 
@@ -90,47 +90,3 @@ function Request(props) {
 }
 
 export default Request;
-
-// class Request extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       title: "",
-//       desc: "",
-//       city: ""
-//     };
-//   }
-
-//   onChangeText = e => {
-//     this.setState(
-//       {
-//         [e.target.name]: e.target.value
-//       }
-//     );
-//   };
-
-//   onSubmit = (e) => {
-//     e.preventDefault();
-
-//     // validate
-//     if (!this.state.title || !this.state.desc || !this.state.city) {
-//       alert("Please enter all fields");
-//       return;
-//     }
-
-//     // make backend request
-
-//     console.log(this.state);
-//   }
-
-//   render() {
-//     const formStyle = {
-//       width: "50%",
-//       margin: "0 25%"
-//     };
-
-    
-// }
-
-// export default Request;

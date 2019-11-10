@@ -1,39 +1,83 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import useToken from "../hooks/useToken";
+import { createOffer } from "../api/api";
 
 function Offer() {
-  return (
-    <Form style={{ width: "50%", margin: "0 25%" }}>
-      {/* <Form.Group> */}
-      {/* <Form.Label>Name</Form.Label>
-        <Form.Control
-          size="sm"
-          type="text"
-          placeholder="Enter your name here"
-        />
-      </Form.Group> */}
+  let history = useHistory();
+  let [city, setCity] = useState("");
+  let [desc, setDesc] = useState("");
+  let [title, setTitle] = useState("");
+  let [token] = useToken();
+  if (!token) {
+    return <div>loading...</div>;
+  }
 
-      <Form.Group>
+  const formStyle = {
+    width: "50%",
+    margin: "0 25%",
+    padding: "10px 0"
+  };
+
+  async function onSubmit(e) {
+    e.preventDefault();
+
+    // validate
+    if (!title || !desc || !city) {
+      alert("Please enter all fields");
+      return;
+    }
+
+    // make backend request
+    await createOffer(title, desc, city, token);
+    history.push("/");
+  }
+
+  return (
+    <Form style={formStyle}>
+      <Form.Group controlId="requesTtitle">
         <Form.Label>Item Title</Form.Label>
         <Form.Control
-          size="sm"
+          value={title}
           type="text"
-          placeholder="Enter the item you want"
+          name="title"
+          placeholder="Enter what you need here"
+          onChange={e => {
+            setTitle(e.target.value);
+          }}
         />
       </Form.Group>
 
       <Form.Group>
         <Form.Label>City</Form.Label>
-        <Form.Control size="sm" type="text" placeholder="Enter your city" />
+        <Form.Control
+          value={city}
+          size="sm"
+          type="text"
+          name="city"
+          placeholder="Enter your city"
+          onChange={e => {
+            setCity(e.target.value);
+          }}
+        />
       </Form.Group>
 
-      <Form.Group controlId="exampleForm.ControlTextarea1">
+      <Form.Group controlId="reqDescription">
         <Form.Label>Item Description</Form.Label>
-        <Form.Control as="textarea" rows="5" />
+        <Form.Control
+          value={desc}
+          as="textarea"
+          placeholder="Describe what you need here"
+          rows="5"
+          name="desc"
+          onChange={e => {
+            setDesc(e.target.value);
+          }}
+        />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={onSubmit}>
         Submit
       </Button>
     </Form>
