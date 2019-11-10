@@ -44,19 +44,6 @@ export async function del(url, body = {}, token) {
   return json;
 }
 
-// export async function getOffers() {
-//   return [
-//     {
-//       id: 122,
-//       name: "freebie1"
-//     },
-//     {
-//       id: 2,
-//       name: "freebie2"
-//     }
-//   ];
-// }
-
 export async function getRequests(token) {
   let json = await get('/requests', token);
   return json;

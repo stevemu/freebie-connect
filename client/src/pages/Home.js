@@ -23,7 +23,7 @@ function Home(props) {
   } else {
     async function init() {
       let token = await getTokenSilently();
-      console.log(token);
+      // console.log(token);
       let requests = await getRequests(token);
       console.log(requests);
     }
