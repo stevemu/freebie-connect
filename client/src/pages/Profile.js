@@ -5,7 +5,7 @@ import { getProfile, updateProfile } from "../api/api";
 import { connect } from "react-redux";
 
 const Profile = (props) => {
-  let {authToken} = props;
+  let {authToken, user} = props;
   // const { loading, getTokenSilently, user } = useAuth0();
   const [name, setName] = useState("");
 
@@ -33,7 +33,7 @@ const Profile = (props) => {
       <Form.Group controlId="requesTtitle">
         <Form.Group controlId="reqDescription">
           <Form.Label>Email</Form.Label>
-          <p>{"email"}</p>
+          <p>{user && user.email}</p>
         </Form.Group>
 
         <Form.Label>Name</Form.Label>
@@ -54,7 +54,8 @@ const Profile = (props) => {
 
 const mapStateToProps = state => {
   return {
-    authToken: state.authToken
+    authToken: state.authToken,
+    user: state.user
   };
 };
 
