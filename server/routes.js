@@ -1,20 +1,13 @@
 let {checkJwt} = require("./util/auth");
+let {getAllRequests} = require("./requests");
 
 function configRoutes(app) {
-  app.get("/test", async (req, res) => {
 
+  app.get("/requests", checkJwt, async (req, res) => {
+    let docs = await getAllRequests(req.db);
+    return res.json(docs);
+  })
 
-
-
-    res.json({});
-  });
-
-  app.get("/authorized", checkJwt, function(req, res) {
-    console.log(req.user);
-    // if (!req.user.admin) return res.sendStatus(401);
-
-    res.send("Secured Resource");
-  });
 }
 
 exports.configRoutes = configRoutes;

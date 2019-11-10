@@ -1,8 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { updateAuthToken } from "../actions/auth";
 import ListGroup from "react-bootstrap/ListGroup";
+import { useAuth0 } from "../react-auth0-spa";
+
+import { getRequests } from "../api/api";
+
 function Home(props) {
+  const { loading, getTokenSilently } = useAuth0();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  } else {
+    async function init() {
+      let token = await getTokenSilently();
+      console.log(token);
+      let requests = await getRequests();
+    }
+    init();
+  }
+
+  console.log(getTokenSilently);
+  // console.log(getTokenSilently);
+  // const [requests, setRequests] = useState([]);
+  // console.log(requests);
+
+  // useEffect(() => {
+  //   initData();
+  // }, []);
+
+  // async function initData() {
+  //   const token = await getTokenSilently();
+  //   let requests = await getRequests(token);
+  //   setRequests(requests);
+  // }
+
   const homeStyle = {
     margin: "0 25%"
   };
