@@ -35,9 +35,9 @@ client.connect((err) => {
   configRoutes(app);
 
   // add fake data
-  let {initOffers, initRequests} = require("./mocks");
-  initOffers(db);
-  initRequests(db);
+  // let {initOffers, initRequests} = require("./mocks");
+  // initOffers(db);
+  // initRequests(db);
 
   switch (process.env.NODE_ENV) {
     case "production":
