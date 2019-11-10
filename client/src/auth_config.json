@@ -1,4 +1,5 @@
 {
   "domain": "stevemu.auth0.com",
-  "clientId": "iLbpbQyeRHmXfyVMdNRyW7RzgwtcZuNV"
+  "clientId": "iLbpbQyeRHmXfyVMdNRyW7RzgwtcZuNV",
+  "audience": "https://freebie-connect-api.stevemu.com"
 }
