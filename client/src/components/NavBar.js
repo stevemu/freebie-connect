@@ -5,9 +5,6 @@ import NavLink from "react-bootstrap/NavLink";
 import {
   Navbar,
   Nav,
-  Container,
-  Form,
-  NavDropdown,
   Button,
   FormControl,
   ButtonToolbar
@@ -30,43 +27,41 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <h4>
-              <Nav.Link href="/home">Home</Nav.Link>
-            </h4>
-            <h4>
-              <Nav.Link href="/offer">Offer an Item</Nav.Link>
-            </h4>
-            <h4>
-              <Nav.Link href="/request">Request an Item</Nav.Link>
-            </h4>
-            <h4>
-              <Nav.Link href="/profile">Profile</Nav.Link>
-            </h4>
-            {/* {isAuthenticated && (
-              <>
-                
-              </>
-            )} */}
+          <Nav
+            className="mr-auto"
+            style={{
+              fontFamily: "Jomolhari, serif",
+              fontWeight: "bold"
+            }}
+          >
+            <Nav.Link className="d-inline p-4 bg-dark" href="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link className="d-inline p-4 bg-dark" href="/offer">
+              Offer an Item
+            </Nav.Link>
+            <Nav.Link className="d-inline p-4 bg-dark" href="/request">
+              Request an Item
+            </Nav.Link>
+            <Nav.Link className="d-inline p-4 bg-dark " href="/profile">
+              Profile
+            </Nav.Link>
           </Nav>
-          <Nav>
-            <ButtonToolbar>
-              {!isAuthenticated && (
-                <Button
-                  variant="info"
-                  size="lg"
-                  onClick={() => loginWithRedirect({})}
-                >
-                  Log In/Sign Up
-                </Button>
-              )}
-              {isAuthenticated && (
-                <Button variant="info" size="lg" onClick={() => logout()}>
-                  Log out
-                </Button>
-              )}
-            </ButtonToolbar>
-          </Nav>
+
+          {!isAuthenticated && (
+            <Button
+              variant="info"
+              size="lg"
+              onClick={() => loginWithRedirect({})}
+            >
+              Log In/Sign Up
+            </Button>
+          )}
+          {isAuthenticated && (
+            <Button variant="info" size="lg" onClick={() => logout()}>
+              Log out
+            </Button>
+          )}
         </Navbar.Collapse>
       </Navbar>
     </div>
