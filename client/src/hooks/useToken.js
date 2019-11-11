@@ -3,18 +3,24 @@ import { useAuth0 } from "../react-auth0-spa";
 
 function useToken() {
   let [token, setToken] = useState(null);
-  const { loading, getTokenSilently } = useAuth0();
+  const { loading, getTokenSilently, isAuthenticated } = useAuth0();
 
-  async function run() {
+  async function getToken() {
     let token = await getTokenSilently();
     setToken(token);
   }
 
-  if (loading) {
-    return [null];
-  } else {
-    run();
-  }
+  useEffect(() => {
+    if (isAuthenticated) {
+      getToken();
+    }
+  }, [isAuthenticated]);
+
+  // if (loading) {
+  //   return [null];
+  // } else {
+  //   run();
+  // }
   return [token];
 }
 

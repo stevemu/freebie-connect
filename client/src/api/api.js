@@ -44,7 +44,7 @@ export async function del(url, body = {}, token) {
   return json;
 }
 
-export async function getRequests(token) {
+export async function getRequests(token = null) {
   let json = await get('/api/requests', token);
   return json;
 }

@@ -9,24 +9,24 @@ import { getRequests, getOffers } from "../api/api";
 import ItemCard from "../components/ItemCard";
 
 function Home(props) {
-  let { authToken } = props;
+  // let { authToken } = props;
 
   const [requests, setRequests] = useState([]);
   const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    if (!authToken) return;
+    // if (!authToken) return;
     fetchRequests();
     fetchOffers();
-  }, [authToken]);
+  }, []);
 
   async function fetchRequests() {
-    let requests = await getRequests(authToken);
+    let requests = await getRequests();
     setRequests(requests);
   }
 
   async function fetchOffers() {
-    let offers = await getOffers(authToken);
+    let offers = await getOffers();
     setOffers(offers);
   }
 
@@ -61,7 +61,7 @@ function Home(props) {
 
 const mapStateToProps = state => {
   return {
-    authToken: state.authToken
+    // authToken: state.authToken
   };
 };
 
