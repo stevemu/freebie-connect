@@ -12,6 +12,7 @@ function useToken() {
 
   useEffect(() => {
     if (isAuthenticated) {
+      console.log('try to get token');
       getToken();
     }
   }, [isAuthenticated]);

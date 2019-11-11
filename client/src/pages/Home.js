@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { updateAuthToken } from "../actions/auth";
-import CardGroup from "react-bootstrap/CardGroup";
 import CardColumns from "react-bootstrap/CardColumns";
-import { useAuth0 } from "../react-auth0-spa";
 import { getRequests, getOffers } from "../api/api";
 
 import ItemCard from "../components/ItemCard";
@@ -67,7 +64,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateAuthToken: token => dispatch(updateAuthToken(token))
+    // updateAuthToken: token => dispatch(updateAuthToken(token))
   };
 };
 
