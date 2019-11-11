@@ -31,4 +31,4 @@ This website provides an easy to way for people to offer and request items to bo
 
 ## roadmap
 
-* it is going to deployed on a cloud server and be publicly accessible
+* delete a post?
